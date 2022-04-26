@@ -68,6 +68,7 @@ export default Main
 export {
   getCountriesAsync as getAllCountries,
   getCountryCallingCodeAsync as getCallingCode,
+  getCountryInfoAsync as getCountryInfo,
 } from './CountryService'
 export { CountryModal } from './CountryModal'
 export { DARK_THEME, DEFAULT_THEME } from './CountryTheme'
