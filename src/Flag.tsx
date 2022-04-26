@@ -27,11 +27,10 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent',
   },
   imageFlag: {
-    resizeMode: 'contain',
-    width: 25,
-    height: 19,
-    borderWidth: 1 / PixelRatio.get(),
-    opacity: 0.8,
+    resizeMode: 'cover',
+    width: 30, 
+    opacity: 0.9,
+    borderRadius:40
   },
 })
 
