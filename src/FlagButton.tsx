@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
     marginTop: 0,
   },
   containerWithoutEmoji: {
-    marginTop: 5,
+    marginTop: 0,
   },
   flagWithSomethingContainer: {
     flexDirection: 'row',
