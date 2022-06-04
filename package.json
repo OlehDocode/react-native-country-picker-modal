@@ -1,12 +1,12 @@
 {
   "name": "@olegnjadocode/react-native-country-picker-modal",
-  "version": "1.0.13",
-  "description": "<h3>   Country Picker for React Native. </h3>",
+  "version": "2.0.0",
+  "description": "react-native country picker",
   "main": "node_modules/expo/AppEntry.js",
   "types": "lib/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/OlehDocode/react-native-country-picker-modal.git"
+    "url": "git+https://github.com/OlehDocode/react-native-country-picker-modal"
   },
   "scripts": {
     "start": "yarn config:dev && expo start",
@@ -17,6 +17,7 @@
     "minify:emoji": "./scripts/minify.js ./lib/assets/data/countries-emoji.json",
     "config:dev": "json -I -f package.json -e 'this.main=\"node_modules/expo/AppEntry.js\"'",
     "config:npm": "json -I -f package.json -e 'this.main=\"lib/index.js\"'",
+    "lint": "tslint --project .",
     "test": "TZ=Europe/Paris jest",
     "data:image": "rm -rf ./data/countries.json && ./scripts/transform-world-countries.js > ./data/countries.json",
     "data:emoji": "rm -rf ./data/countries-emoji.json && ./scripts/transform-world-countries.js --emoji > ./data/countries-emoji.json",
@@ -24,8 +25,8 @@
     "data:regions": "rm -rf ./data/cca2.json && ./scripts/transform-world-countries.js --regions > ./data/regions.json",
     "data:subregions": "rm -rf ./data/cca2.json && ./scripts/transform-world-countries.js --subregions > ./data/subregions.json",
     "cleaning": "rm -rf node_modules && rm -f yarn.lock && yarn cache clean && yarn install && watchman watch-del-all && rm -fr $TMPDIR/react-*",
-    "verify": "yarn build && yarn test",
-    "prepublishOnly": "yarn config:npm",
+    "verify": "yarn lint && yarn build && yarn test",
+    "prepublishOnly": "yarn verify && yarn config:npm",
     "postpublish": "yarn config:dev",
     "deploy": "gh-pages -d web-build",
     "predeploy": "yarn verify && expo build:web && mkdir web-build/countries && cp ./data/countries.json web-build/countries/index.json"
@@ -42,7 +43,7 @@
   "bugs": {
     "url": "https://github.com/OlehDocode/react-native-country-picker-modal/issues"
   },
-  "homepage": "https://github.com/OlehDocode/react-native-country-picker-modal#readme",
+  "homepage": "https://github.com/OlehDocode/react-native-country-picker-modal",
   "dependencies": {
     "@callstack/react-theme-provider": "3.0.3",
     "fuse.js": "3.4.5",
@@ -96,6 +97,11 @@
       "<rootDir>/example-expo",
       "<rootDir>/example-slack-message"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint && yarn tsc"
+    }
   },
   "resolutions": {
     "mem": "^4.0.0"

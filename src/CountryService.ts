@@ -229,6 +229,11 @@ export interface CountryInfo {
   countryName: string
   currency: string
   callingCode: string
+  region: Region
+  subregion: Subregion
+  flag: string
+  name: TranslationLanguageCodeMap | string
+  cca2: CountryCode
 }
 export const getCountryInfoAsync = async ({
   countryCode,
@@ -236,7 +241,7 @@ export const getCountryInfoAsync = async ({
 }: {
   countryCode: CountryCode
   translation?: TranslationLanguageCode
-}): Promise<Country> => {
+}): Promise<CountryInfo> => {
   const countries = await loadDataAsync()
   if (!countries) {
     throw new Error('Unable to find image because imageCountries is undefined')
@@ -249,5 +254,12 @@ export const getCountryInfoAsync = async ({
         translation
       ] ||
       (countries[countryCode].name as TranslationLanguageCodeMap)['common'],
+    countryName:
+      (countries[countryCode].name as TranslationLanguageCodeMap)[
+        translation
+      ] ||
+      (countries[countryCode].name as TranslationLanguageCodeMap)['common'],
+    currency: countries[countryCode].currency[0],
+    callingCode: countries[countryCode].callingCode[0],
   }
 }

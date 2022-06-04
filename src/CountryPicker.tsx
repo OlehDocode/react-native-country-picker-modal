@@ -164,7 +164,7 @@ export const CountryPicker = (props: CountryPickerProps) => {
     placeholder,
   }
 
-  useEffect(() => {
+  useEffect((): any => {
     let cancel = false
     getCountriesAsync(
       withEmoji ? FlagType.EMOJI : FlagType.FLAT,
@@ -176,10 +176,10 @@ export const CountryPicker = (props: CountryPickerProps) => {
       preferredCountries,
       withAlphaFilter,
     )
-      .then(countries => cancel ? null : setCountries(countries))
+      .then(countries => (cancel ? null : setCountries(countries)))
       .catch(console.warn)
-    
-    return () => cancel = true
+
+    return () => (cancel = true)
   }, [translation, withEmoji])
 
   return (
