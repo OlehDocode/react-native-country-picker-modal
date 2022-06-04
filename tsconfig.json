@@ -1,9 +1,9 @@
 {
-  "include": ["src", "./typings.d.ts"],
+  "include": ["./typings.d.ts"],
   "compilerOptions": {
     "declaration": true,
     "outDir": "./lib",
-    "strict": true,
+    "strict": false,
     "removeComments": true,
     "jsx": "react",
     "target": "es2019",
@@ -22,7 +22,7 @@
     "noImplicitReturns": true,
     "noImplicitThis": true,
     "importHelpers": false,
-    "alwaysStrict": true,
+    "alwaysStrict": false,
     "forceConsistentCasingInFileNames": true,
     "strictFunctionTypes": true,
     "resolveJsonModule": true,

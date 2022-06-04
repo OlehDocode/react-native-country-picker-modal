@@ -18,6 +18,10 @@ useEffect(() => {
 }, [])
 ```
 
+```bash
+$ yarn add @olegnjadocode/react-native-country-picker-modal
+```
+
 <p>
    <a href="https://reactnative.gallery/xcarpentier/country-picker"><img src="https://img.shields.io/badge/reactnative.gallery-%F0%9F%8E%AC-green.svg"/></a>
   <a href="https://www.npmjs.com/package/react-native-country-picker-modal"><img src="https://img.shields.io/npm/v/react-native-country-picker-modal.svg?style=flat-square"></a>
