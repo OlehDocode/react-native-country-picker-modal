@@ -200,14 +200,16 @@ export const search = (
   data: Country[] = [],
   options: Fuse.FuseOptions<any> = DEFAULT_FUSE_OPTION,
 ) => {
+  const filterWithoutPlus = filter.replace('+', '')
+
   if (data.length === 0) {
     return []
   }
   if (!fuse) {
     fuse = new Fuse<Country>(data, options)
   }
-  if (filter && filter !== '') {
-    const result = fuse.search(filter)
+  if (filterWithoutPlus && filterWithoutPlus !== '') {
+    const result = fuse.search(filterWithoutPlus)
     return result
   } else {
     return data
