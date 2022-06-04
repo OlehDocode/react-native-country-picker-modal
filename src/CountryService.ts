@@ -229,7 +229,6 @@ export interface CountryInfo {
   countryName: string
   currency: string
   callingCode: string
-  cca2: CountryCode
 }
 export const getCountryInfoAsync = async ({
   countryCode,
