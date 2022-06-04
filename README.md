@@ -1,6 +1,22 @@
-<h3>
+<h2>
   Country Picker for React Native.
-</h3>
+</h2>
+<h3>Forked version, added export of little modified getCountryInfoAsync function in order to set selected country by default and fixed transparent emoji on android issue</h3>
+<h2>Example</h2>
+
+```tsx
+import { getCountryInfo } from '@olegnjadocode/react-native-country-picker-modal'
+
+const initLocalCountry: CountryCode = 'GB'
+
+const [selectedCountry, setSelectedCountry] = useState<Country>()
+
+useEffect(() => {
+  getCountryInfo({ countryCode: initLocalCountry }).then(data => {
+    if (data) setSelectedCountry(data)
+  })
+}, [])
+```
 
 <p>
    <a href="https://reactnative.gallery/xcarpentier/country-picker"><img src="https://img.shields.io/badge/reactnative.gallery-%F0%9F%8E%AC-green.svg"/></a>
