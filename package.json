@@ -1,6 +1,6 @@
 {
   "name": "@olegnjadocode/react-native-country-picker-modal",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "react-native country picker",
   "main": "node_modules/expo/AppEntry.js",
   "types": "lib/index.d.ts",

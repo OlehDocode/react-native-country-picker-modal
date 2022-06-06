@@ -263,5 +263,6 @@ export const getCountryInfoAsync = async ({
       (countries[countryCode].name as TranslationLanguageCodeMap)['common'],
     currency: countries[countryCode].currency[0],
     callingCode: countries[countryCode].callingCode[0],
+    cca2: countryCode,
   }
 }
